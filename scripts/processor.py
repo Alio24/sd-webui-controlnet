@@ -45,7 +45,7 @@ def fake_scribble(img, res=512, **kwargs):
     result = hed(img, res)
     import cv2
     from annotator.hed import nms
-    result = nms(result, 127, 3.0)
+    result = nms(result, 128, 3.0)
     result = cv2.GaussianBlur(result, (0, 0), 3.0)
     result[result > 10] = 255
     result[result < 255] = 0
